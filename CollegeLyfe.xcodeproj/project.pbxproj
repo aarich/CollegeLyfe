@@ -14,6 +14,7 @@
 		FA863D321A1721290099453D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA863D311A1721290099453D /* Images.xcassets */; };
 		FA863D351A1721290099453D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA863D331A1721290099453D /* LaunchScreen.xib */; };
 		FA863D411A1721290099453D /* CollegeLyfeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA863D401A1721290099453D /* CollegeLyfeTests.swift */; };
+		FA863D4B1A1731340099453D /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA863D4A1A1731340099453D /* Grocery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FA863D3A1A1721290099453D /* CollegeLyfeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeLyfeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA863D3F1A1721290099453D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA863D401A1721290099453D /* CollegeLyfeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeLyfeTests.swift; sourceTree = "<group>"; };
+		FA863D4A1A1731340099453D /* Grocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				FA863D2A1A1721290099453D /* FirstViewController.swift */,
 				FA863D2C1A1721290099453D /* SecondViewController.swift */,
 				FA863D2E1A1721290099453D /* Main.storyboard */,
+				FA863D4A1A1731340099453D /* Grocery.swift */,
 				FA863D311A1721290099453D /* Images.xcassets */,
 				FA863D331A1721290099453D /* LaunchScreen.xib */,
 				FA863D261A1721290099453D /* Supporting Files */,
@@ -218,6 +221,7 @@
 				FA863D2D1A1721290099453D /* SecondViewController.swift in Sources */,
 				FA863D291A1721290099453D /* AppDelegate.swift in Sources */,
 				FA863D2B1A1721290099453D /* FirstViewController.swift in Sources */,
+				FA863D4B1A1731340099453D /* Grocery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
