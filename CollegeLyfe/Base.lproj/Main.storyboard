@@ -277,7 +277,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z83-DI-YGD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="$0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z83-DI-YGD">
                                 <rect key="frame" x="213" y="24" width="128" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -291,7 +291,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp7-OY-2m6">
-                                <rect key="frame" x="259" y="102" width="63" height="30"/>
+                                <rect key="frame" x="164" y="102" width="63" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="CYs-2O-5uS"/>
                                 </constraints>
@@ -300,18 +300,6 @@
                                 </state>
                                 <connections>
                                     <action selector="AddItem:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8Na-Pe-u9F"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwY-se-NI1">
-                                <rect key="frame" x="429" y="102" width="65" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="7VS-pf-A0u"/>
-                                </constraints>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="ComputeOptions:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gSe-e6-hgj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5u-R4-N4r">
@@ -348,6 +336,27 @@
                                     <constraint firstAttribute="height" constant="300" id="ss7-x8-puj"/>
                                 </constraints>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srM-dg-gGJ">
+                                <rect key="frame" x="98" y="298" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Next:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="RgW-9p-Xhv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwY-se-NI1">
+                                <rect key="frame" x="245" y="102" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="7VS-pf-A0u"/>
+                                </constraints>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ComputeOptions:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gSe-e6-hgj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -374,6 +383,7 @@
                     <connections>
                         <outlet property="CalculateOptionsButton" destination="zwY-se-NI1" id="0ng-np-mOu"/>
                         <outlet property="ItemTable" destination="Pg0-Kh-vIo" id="ReR-iy-r20"/>
+                        <outlet property="NextButton" destination="srM-dg-gGJ" id="h7u-mW-mKK"/>
                         <outlet property="OptionTable" destination="dE3-RY-ql0" id="qR3-AW-7WK"/>
                         <outlet property="ResetButton" destination="S5u-R4-N4r" id="f4e-hu-gDp"/>
                         <outlet property="TapRec" destination="98G-1c-6Is" id="1ag-lu-lYI"/>
