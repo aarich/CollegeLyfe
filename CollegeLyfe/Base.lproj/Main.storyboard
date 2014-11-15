@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -253,13 +254,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl6-sR-XIb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl6-sR-XIb">
                                 <rect key="frame" x="16" y="68" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eggs" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFe-da-Ulr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eggs" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFe-da-Ulr">
                                 <rect key="frame" x="58" y="64" width="151" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -270,7 +271,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount willing to spend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suc-Dl-4gI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount willing to spend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suc-Dl-4gI">
                                 <rect key="frame" x="16" y="28" width="185" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -279,48 +280,115 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z83-DI-YGD">
                                 <rect key="frame" x="213" y="24" width="128" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaT-xA-7zB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaT-xA-7zB">
                                 <rect key="frame" x="271" y="63" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Ob3-D6-zoF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp7-OY-2m6">
-                                <rect key="frame" x="376" y="63" width="63" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp7-OY-2m6">
+                                <rect key="frame" x="259" y="102" width="63" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="CYs-2O-5uS"/>
+                                </constraints>
                                 <state key="normal" title="Add Item">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="AddItem:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8Na-Pe-u9F"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwY-se-NI1">
-                                <rect key="frame" x="466" y="63" width="123" height="30"/>
-                                <state key="normal" title="Calculate Options">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwY-se-NI1">
+                                <rect key="frame" x="429" y="102" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="7VS-pf-A0u"/>
+                                </constraints>
+                                <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ComputeOptions:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gSe-e6-hgj"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pg0-Kh-vIo">
-                                <rect key="frame" x="0.0" y="111" width="600" height="300"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5u-R4-N4r">
+                                <rect key="frame" x="28" y="102" width="116" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="a13-5K-Xha"/>
+                                </constraints>
+                                <state key="normal" title="Reset Everything">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ResetAll:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ZBH-Ha-AYe"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pg0-Kh-vIo">
+                                <rect key="frame" x="0.0" y="140" width="600" height="154"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lip-nj-MCz">
                                     <rect key="frame" x="0.0" y="66" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableView>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HjK-qF-uBO">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HjK-qF-uBO" id="Ent-cQ-ebc">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Options" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-QZ-ebP">
+                                <rect key="frame" x="28" y="302" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dE3-RY-ql0">
+                                <rect key="frame" x="0.0" y="331" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ss7-x8-puj"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dE3-RY-ql0" firstAttribute="top" secondItem="tzw-QZ-ebP" secondAttribute="bottom" constant="8" symbolic="YES" id="7a6-Vx-ByZ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="dE3-RY-ql0" secondAttribute="bottom" constant="-31" id="7bn-2f-haH"/>
+                            <constraint firstItem="hl6-sR-XIb" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="68" id="Itm-Hl-dA7"/>
+                            <constraint firstItem="dE3-RY-ql0" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="Lsg-oP-dAf"/>
+                            <constraint firstItem="dE3-RY-ql0" firstAttribute="leading" secondItem="Pg0-Kh-vIo" secondAttribute="leading" id="PQp-A3-rBU"/>
+                            <constraint firstItem="dE3-RY-ql0" firstAttribute="trailing" secondItem="Pg0-Kh-vIo" secondAttribute="trailing" id="U5X-3b-cvv"/>
+                            <constraint firstItem="eFe-da-Ulr" firstAttribute="leading" secondItem="hl6-sR-XIb" secondAttribute="trailing" constant="8" symbolic="YES" id="ULQ-ls-zkg"/>
+                            <constraint firstItem="hl6-sR-XIb" firstAttribute="centerY" secondItem="xaT-xA-7zB" secondAttribute="centerY" id="Ulm-eA-frP"/>
+                            <constraint firstItem="hl6-sR-XIb" firstAttribute="leading" secondItem="Suc-Dl-4gI" secondAttribute="leading" id="VXq-fY-LQb"/>
+                            <constraint firstItem="S5u-R4-N4r" firstAttribute="top" secondItem="hl6-sR-XIb" secondAttribute="bottom" constant="13" id="avW-CF-3Ou"/>
+                            <constraint firstAttribute="trailing" secondItem="dE3-RY-ql0" secondAttribute="trailing" id="ksN-JY-beZ"/>
+                            <constraint firstItem="hl6-sR-XIb" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="tzw-md-XqD"/>
+                            <constraint firstItem="hl6-sR-XIb" firstAttribute="top" secondItem="Suc-Dl-4gI" secondAttribute="bottom" constant="19" id="zxc-v2-yD9"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="98G-1c-6Is" appends="YES" id="lcu-ho-grT"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Grocery" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="CalculateOptionsButton" destination="zwY-se-NI1" id="0ng-np-mOu"/>
+                        <outlet property="ItemTable" destination="Pg0-Kh-vIo" id="ReR-iy-r20"/>
+                        <outlet property="OptionTable" destination="dE3-RY-ql0" id="qR3-AW-7WK"/>
+                        <outlet property="ResetButton" destination="S5u-R4-N4r" id="f4e-hu-gDp"/>
+                        <outlet property="TapRec" destination="98G-1c-6Is" id="1ag-lu-lYI"/>
+                        <outlet property="addItemButton" destination="bp7-OY-2m6" id="XdI-hj-7z4"/>
+                        <outlet property="addedItem" destination="eFe-da-Ulr" id="qZq-bW-zk0"/>
+                        <outlet property="priceOfItem" destination="xaT-xA-7zB" id="dS6-B5-EFW"/>
+                        <outlet property="willingToSpend" destination="Z83-DI-YGD" id="8MA-z0-XtQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="98G-1c-6Is">
+                    <connections>
+                        <action selector="viewTapped:" destination="8rJ-Kc-sve" id="siZ-gU-HWH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="786" y="372"/>
         </scene>

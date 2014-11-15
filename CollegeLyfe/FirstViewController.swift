@@ -67,14 +67,14 @@ class FirstViewController: UIViewController {
         
         let timePassed = elapsedTime/60.0
         
-        progressbar1.progress = (timePassed)/(1.0*inputtime1)
-        percent1.value = integer of progressbar1.value * 100
+//        progressbar1.progress = (timePassed)/(1.0*inputtime1)
+//        percent1.value = integer of progressbar1.value * 100
         
-        if percent1.value == 100 {
-            set off alarm
-        }
+//        if percent1.value == 100 {
+//            set off alarm
+//        }
         
-        finishtime1 = realworldtime + inputtime1
+//        finishtime1 = realworldtime + inputtime1
     }
     
     var timer = NSTimer()
@@ -94,7 +94,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        refreshUI()
+//        refreshUI()
     }
 
     override func didReceiveMemoryWarning() {

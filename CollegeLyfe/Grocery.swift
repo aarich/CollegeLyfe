@@ -9,8 +9,8 @@
 import Foundation
 
 class Grocery {
-    var items: [(name: String, value: Int)]
-    var totalToSpend = 0
+    var items: [(name: String, value: Double)]
+    var totalToSpend: Double = 0.0
     var possibleCombos: [[(name: String, value: Int)]] = []
     
     
@@ -20,19 +20,17 @@ class Grocery {
         self.possibleCombos = []
     }
     
-    init (items: [(name: String, value: Int)], totalToSpend: Int) {
+    init (items: [(name: String, value: Double)], totalToSpend: Double) {
         self.items = items
         self.totalToSpend = totalToSpend
-        var list = self.generateCombos(items, totalToSpend: totalToSpend)
         self.possibleCombos = []
-        self.possibleCombos = list
     }
     
-    func setSpendingLimit(newLimit: Int) {
+    func setSpendingLimit(newLimit: Double) {
         self.totalToSpend = newLimit
     }
     
-    func addItem(newItem: String, val: Int) {
+    func addItem(newItem: String, val: Double) {
         self.items.append(name: newItem, value: val)
     }
     
@@ -40,14 +38,25 @@ class Grocery {
         items = []
     }
     
-    func generateCombos(items: [(name: String, value: Int)], totalToSpend: Int) -> [[(name: String, value: Int)]] {
+    func reset() {
+        self.removeItems()
+        totalToSpend = 0
+        self.possibleCombos = []
+    }
+    
+    func compute() {
+        var list = self.generateCombos(items, totalToSpend: self.totalToSpend)
+        self.possibleCombos = list
+    }
+    
+    func generateCombos(items: [(name: String, value: Double)], totalToSpend: Double) -> [[(name: String, value: Int)]] {
         // Generates a list of tuples of the possible combinations one can get.
         if items.isEmpty {
             return []
         }
         var enough = false
         for (name, value) in items {
-            if value <= totalToSpend {
+            if value <= Double(totalToSpend) {
                 enough = true
                 break
             }
