@@ -9,9 +9,9 @@
 import Foundation
 
 class Grocery {
-    var items: Array<String>
+    var items: [(name: String, value: Int)]
     var totalToSpend = 0
-    var possibleCombos: [(name: String, value: Int)]
+    var possibleCombos: [[(name: String, value: Int)]] = []
     
     
     init () {
@@ -20,10 +20,11 @@ class Grocery {
         self.possibleCombos = []
     }
     
-    init (items: Array<String>, totalToSpend: Int) {
+    init (items: [(name: String, value: Int)], totalToSpend: Int) {
         self.items = items
         self.totalToSpend = totalToSpend
-        var list = generateCombos()
+        var list = self.generateCombos(items, totalToSpend: totalToSpend)
+        self.possibleCombos = []
         self.possibleCombos = list
     }
     
@@ -31,17 +32,54 @@ class Grocery {
         self.totalToSpend = newLimit
     }
     
-    func addItem(newItem: String) {
-        self.items.append(newItem)
+    func addItem(newItem: String, val: Int) {
+        self.items.append(name: newItem, value: val)
     }
     
     func removeItems() {
         items = []
     }
     
-    func generateCombos(items: [String], ) -> [(name: String, value: Int)] {
+    func generateCombos(items: [(name: String, value: Int)], totalToSpend: Int) -> [[(name: String, value: Int)]] {
         // Generates a list of tuples of the possible combinations one can get.
-        if
+        if items.isEmpty {
+            return []
+        }
+        var enough = false
+        for (name, value) in items {
+            if value <= totalToSpend {
+                enough = true
+                break
+            }
+        }
+        if !enough {
+            return []
+        }
+        
+        var useit = self.generateCombos(items, totalToSpend: totalToSpend - items[0].value)
+        var sliced = items
+        sliced.removeAtIndex(0)
+        let loseit = self.generateCombos(sliced, totalToSpend: totalToSpend)
+        
+        for var n = 0; n < useit.count; ++n {
+            var found = false
+            for var i = 0; i < useit[n].count; ++i {
+                if useit[n][i].name == items[0].name {
+                    useit[n][i].value += 1
+                    found = true
+                }
+            }
+            if !found {
+                useit[n].append(name: items[0].name, value: 1)
+            }
+            
+        }
+        
+        if useit.count == 0 {
+            useit = [[(name:items[0].name, value: 1)]]
+        }
+        
+        return useit + loseit
     }
     
 }
