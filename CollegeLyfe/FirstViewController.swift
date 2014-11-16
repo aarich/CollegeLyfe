@@ -15,8 +15,8 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var startTime = NSTimeInterval()
-    
-    
+    var currentTime = NSDate.timeIntervalSinceReferenceDate()
+    var finish = NSDate.dateByAddingTimeInterval(currentTime)
     
 
     @IBOutlet weak var percent1: UITextField!
@@ -41,7 +41,7 @@ class FirstViewController: UIViewController {
     
     
     func updateTime() {
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
         
         //Find the difference between current time and start time.
         var elapsedTime: NSTimeInterval = currentTime - startTime
@@ -54,27 +54,28 @@ class FirstViewController: UIViewController {
         let seconds = UInt8(elapsedTime)
         elapsedTime -= NSTimeInterval(seconds)
         
-        //find out the fraction of milliseconds to be displayed.
-        let fraction = UInt8(elapsedTime * 100)
         
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         let strMinutes = minutes > 9 ? String(minutes): "0" + String(minutes)
         let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
-        let strFraction = fraction > 9 ? String(fraction): "0" + String(fraction)
         
-        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
-        var timePassedString = "\(strMinutes):\(strSeconds):\(strFraction)"
         
-        let timePassed = elapsedTime/60.0
+        var timePassedString = "\(strMinutes):\(strSeconds)"
         
-//        progressbar1.progress = (timePassed)/(1.0*inputtime1)
-//        percent1.value = integer of progressbar1.value * 100
+        var timePassed = Float(elapsedTime/60)
+        var time1 = Float(inputtime1)
         
-//        if percent1.value == 100 {
-//            set off alarm
-//        }
+        progressbar1.progress = timePassed/time1
+        percent1.text = String(100*progressbar1.progress)
         
-//        finishtime1 = realworldtime + inputtime1
+        finishtime1 = realworldtime + inputtime1
+        
+        if percent1.text == "100" {
+            //set off alarm
+            refreshUI()
+        }
+                
+        
     }
     
     var timer = NSTimer()
